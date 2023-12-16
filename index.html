@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body class="light_mode">
+
+        <section>
+            <h1>ToDo Приложение</h1>
+            <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
+
+            <form id="taskForm">
+                <label for="title">Заголовок:</label>
+                <input type="text" id="title" required />
+
+                <label for="body">Описание:</label>
+                <input type="text" id="body" required />
+
+                <label for="userId">ID пользователя (1-10):</label>
+                <input type="number" id="userId" min="1" max="10" required />
+
+                <label for="important">Важная:</label>
+                <input type="checkbox" id="important" />
+
+                <button type="submit">Добавить/Редактировать</button>
+                <div class="error" id="userIdError"></div>
+            </form>
+
+            <div id="tasks">
+            </div>
+
+            <div id="done">
+                <h3>Выполненные задания</h3>
+            </div>
+
+            <!-- Модальное окно подтверждения удаления -->
+            <div id="deleteModal" class="modal">
+                <div class="modal-content">
+                    <p>Вы уверены, что хотите удалить этот важный пост?</p>
+                    <button class="modal-btn" id="confirmDelete">Удалить</button>
+                    <button class="modal-btn cancel" id="cancelDelete">Отмена</button>
+                </div>
+            </div>
+        </section>
+
+        <script src="app/app.js"></script>
+    </body>
+</html>
